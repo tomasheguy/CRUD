@@ -9,7 +9,7 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controller = {
 	// Root - Show all products
 	index: (req, res) => {
-		res.render('products', {products}); //le paso el objeto products como parametro
+		res.render('products', {products,toThousand}); //le paso el objeto products como parametro
 	},
 
 	// Detail - Detail from one product
@@ -35,7 +35,7 @@ const controller = {
 	edit: (req, res) => {
 		// solo falta auto completar los campos
 		const productToEdit = products.find((prod) => prod.id == req.params.id);
-		res.render('product-edit-form',{productToEdit}); //recibe respueta del formulario
+		res.render('product-edit-form',{productToEdit,toThousand}); //recibe respueta del formulario
 	},
 	// Update - Method to update
 	update: (req, res) => {

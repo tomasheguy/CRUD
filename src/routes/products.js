@@ -17,12 +17,12 @@ router.post('/', productsController.store); // porque con / ya estamos en /produ
 router.get('/:id/', productsController.detail); 
 
 /*** EDIT ONE PRODUCT ***/ 
-router.get('/edit/id', productsController.edit); 
-router.put('/id', productsController.update); // los datos del formulario vienen por body
+router.get('/edit/:id', productsController.edit); 
+router.put('/:id', productsController.update); // los datos del formulario vienen por body
 
 
 /*** DELETE ONE PRODUCT***/ 
-router.delete('/id', productsController.destroy); 
+router.delete('/:id', productsController.destroy); 
 
 
 module.exports = router;
