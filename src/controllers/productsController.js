@@ -27,7 +27,7 @@ const controller = {
 	// Create -  Method to store
 	store: (req, res) => {
 		const nuevoProducto = req.body;
-		res.send(nuevoProducto); //no estoy muy seguro de esto
+		// res.send(nuevoProducto); //no estoy muy seguro de esto
 		res.send('se creo producto');
 	},
 
@@ -40,7 +40,7 @@ const controller = {
 	// Update - Method to update
 	update: (req, res) => {
 		const editedProduct = req.body;
-		res.send(editedProduct); //no estoy muy seguro de esto
+		//res.send(editedProduct); //no estoy muy seguro de esto
 		res.send('se actualizo el producto');
 	},
 

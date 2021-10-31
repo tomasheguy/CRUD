@@ -11,10 +11,10 @@ const controller = {
 		// new array w products que cumplen con condicion visited
 		const productsVisited = products.filter((prod) =>  prod.category === "visited");
 		const productsOnSale = products.filter((prod) =>  prod.category === "in-sale");
-		res.render('index',{productsVisited,productsOnSale}); // faltar filtrarlos por un lado en oferta y visitados x otro
+		res.render('index',{productsVisited,productsOnSale, toThousand}); // faltar filtrarlos por un lado en oferta y visitados x otro
 	},
 	search: (req, res) => {
-		res.render('results',{products}); // mandamos todos los productos para despues filtrarlos
+		res.render('results',{products, toThousand}); // mandamos todos los productos para despues filtrarlos
 	},
 };
 
