@@ -27,7 +27,7 @@
 						<h2 class="product-detail-title"><%= product.name %></h2>
 						
 							<p class="product-detail-price small">
-								<span><%= product.price %></span>
+								<span><%= toThousand(product.price) %></span>
 								
 								<b><%= product.discount %>% OFF</b>
 							</p>
@@ -36,7 +36,7 @@
 								$FINAL PRICE: 
 							</p>
 							<p class="product-detail-price">
-								<%= product.price *(1-product.discount/100) %>
+								<%= toThousand(product.price *(1-product.discount/100)) %>
 							</p>
 							<% } %>
 						<ul class="actions-list">
