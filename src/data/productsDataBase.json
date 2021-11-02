@@ -1,8 +1,5 @@
 [
- {
-  "id": 1,
-  "image": "img-cafetera-moulinex.jpg"
- },
+ 
  {
   "id": 2,
   "name": "Macbook Pro 2022",
@@ -118,15 +115,6 @@
   "price": 10999,
   "discount": 5,
   "image": "img-sony-blueray.jpg",
-  "category": "visited"
- },
- {
-  "id": 15,
-  "name": "Bicicleta Mountain Bike Fierce Rodado 29",
-  "description": "Bicicleta Mountain Bike Fierce Rodado 29 21 velocidades. Tipo: Mountain Bike. Rodado: 29. Material Cuadro: Aluminio. Talle: 18. Suspensión: Delantera. Velocidades: 21 - Shimano. Sistema de Freno: Disco Mecánico. Llantas: Doble pared.",
-  "price": 15979,
-  "discount": 12,
-  "image": "img-bicicleta-fierce.jpg",
   "category": "visited"
  },
  {

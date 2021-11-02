@@ -79,11 +79,16 @@ const controller = {
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
 
-		const idProductABorrar = req.params.id // le agrega todo lo del formulario excepto el file
+		
+
+		const productIndex = products.findIndex((producto)=>{
+			return (producto.id == req.params.id)
+			
+		});
 			
 		// buscar el producto con ese id	
 		
-		products.splice(idProductABorrar,1);
+		products.splice(productIndex,1);
 
 		fs.writeFileSync(productsFilePath,JSON.stringify(products,null,' '));
 		
