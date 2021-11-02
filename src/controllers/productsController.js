@@ -59,8 +59,12 @@ const controller = {
 
 		const productoEditado = {
 			id: products[productIndex].id,
+			name: req.body.name,
+			price: Number(req.body.price),
+			discount: Number(req.body.discount),
+			category: req.body.category,
+			description: req.body.description,
 			
-			...req.body, // le agrega todo lo del formulario excepto el file
 			image: req.file? req.file.filename : products[productIndex].image //le agrega el file que uploade, si lo hice, sino mantengo el anterior
 			};
 		
