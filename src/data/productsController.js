@@ -20,25 +20,17 @@ const controller = {
 
 	// Create - Form to create
 	create: (req, res) => {
-		res.body
+		
 		res.render('product-create-form'); //
 	},
 	
 	// Create -  Method to store
 	store: (req, res) => {
-
-		const nuevoProducto = {
-		
-			id : products[products.length-1].id + 1, // le crea un id 1 mas alto que el del ultimo
-			...req.body, // le agrega todo lo del formulario excepto el file
-			image: req.file? req.file.filename : '' //le agrega el file que uploade
-			};
+		const nuevoProducto = req.body;
 		
 		products.push(nuevoProducto);
 
-		fs.writeFileSync(productsFilePath,JSON.stringify(products,null,' '));
-		
-
+		const productsDataBase = JSON.stringify(products);
 		res.redirect('/');
 		
 		//res.send('se creo producto');
@@ -52,45 +44,16 @@ const controller = {
 	},
 	// Update - Method to update
 	update: (req, res) => {
-		const productIndex = products.findIndex((producto)=>{
-			return (producto.id == req.params.id)
-			
-		});
-
-		const productoEditado = {
-			id: products[productIndex].id,
-			
-			...req.body, // le agrega todo lo del formulario excepto el file
-			image: req.file? req.file.filename : products[productIndex].image //le agrega el file que uploade, si lo hice, sino mantengo el anterior
-			};
 		
-			products[productIndex] = productoEditado;
-
-			fs.writeFileSync(productsFilePath,JSON.stringify(products,null,' '));
-		
-
-			res.redirect('/');
-		
-		
+		res.send(editedProduct); //no estoy muy seguro de est
 		
 		
 	},
 
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
-
-		const idProductABorrar = req.params.id // le agrega todo lo del formulario excepto el file
-			
-		// buscar el producto con ese id	
 		
-		products.splice(idProductABorrar,1);
-
-		fs.writeFileSync(productsFilePath,JSON.stringify(products,null,' '));
-		
-
-		res.redirect('/')
-		
-		
+		res.send('se borro el producto ' + req.params.id);
 	}
 };
 
